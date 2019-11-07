@@ -10,8 +10,12 @@ $ ( document ).ready (function(){
         function nextSlide(){
 
             var posizioneImg = $(".slider-wrapper .images img.active");
+
+            var posizionePin = $(".nav i.active")
     
             posizioneImg.removeClass("active");
+
+            posizionePin.removeClass("active");
             
             if(posizioneImg.hasClass("last")){
     
@@ -20,6 +24,15 @@ $ ( document ).ready (function(){
             } else {
     
                 posizioneImg.next("img").addClass("active");
+            }
+
+            if(posizionePin.hasClass("last")){
+
+                $(".nav i.first").addClass("active");
+
+            } else {
+
+                posizionePin.next("i").addClass("active")
             }
         }
 
@@ -32,8 +45,12 @@ $ ( document ).ready (function(){
         function precSlide(){
 
             var posizioneImg = $(".slider-wrapper .images img.active");
+
+            var posizionePin = $(".nav i.active")
     
             posizioneImg.removeClass("active");
+
+            posizionePin.removeClass("active");
             
             if(posizioneImg.hasClass("first")){
     
@@ -42,6 +59,15 @@ $ ( document ).ready (function(){
             } else {
     
                 posizioneImg.prev("img").addClass("active");
+            }
+
+            if(posizionePin.hasClass("first")){
+
+                $(".nav i.last").addClass("active");
+
+            } else {
+
+                posizionePin.prev("i").addClass("active")
             }
         }
 
